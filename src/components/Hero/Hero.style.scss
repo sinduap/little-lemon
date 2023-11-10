@@ -1,0 +1,39 @@
+.hero {
+  color: var(--col-white);
+  padding: 4rem 0 6rem;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  column-gap: 4rem;
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  &__title {
+    color: var(--col-primary-2);
+    font-size: 3.6rem;
+
+    span {
+      display: block;
+      color: var(--col-white);
+      font-size: 2rem;
+    }
+  }
+
+  &__text {
+    max-width: 50ch;
+    font-size: 1.6rem;
+  }
+
+  &__img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 1.6rem;
+  }
+}

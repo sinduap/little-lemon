@@ -1,0 +1,59 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "name": "Greek Salad",
+      "description": "The famous greek salad of crispy lettuce, pepper, olives, and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
+      "price": 12.99,
+      "img_url": "https://images.unsplash.com/photo-1608032077018-c9aad9565d29"
+    },
+    {
+      "id": 2,
+      "name": "Bruschetta",
+      "description": "Our Bruschheta is made from grilled bread that has been smeared with salt wand olive oil.",
+      "price": 5.99,
+      "img_url": "https://images.unsplash.com/photo-1623962470382-a01d602b3a16"
+    },
+    {
+      "id": 3,
+      "name": "Lemon Dessert",
+      "description": "This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
+      "price": 5,
+      "img_url": "https://images.unsplash.com/photo-1578330747074-ed30783e858f"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Sara Lopez",
+      "username": "Sara72",
+      "img_url": "https://i.pravatar.cc/150?img=SaraLopez",
+      "description": "Seriously cannot stop thinking about the Turkish Mac n' Cheese!",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "John Doe",
+      "username": "Johnny_Utah",
+      "img_url": "https://i.pravatar.cc/150?img=JohnDoe",
+      "description": "We had such a great time celebrating mu grandmothers birthday!",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "name": "Eric Cantona",
+      "username": "Eric_c",
+      "img_url": "https://i.pravatar.cc/150?img=EricCantona",
+      "description": "Best Feta Salad in town, Flawless everytime!",
+      "rating": 5
+    },
+    {
+      "id": 4,
+      "name": "Paul McCartney",
+      "username": "Paul65",
+      "img_url": "https://i.pravatar.cc/150?img=PaulMcCartney",
+      "description": "Such a chilled out atmosphere - love it!",
+      "rating": 5
+    }
+  ]
+}
