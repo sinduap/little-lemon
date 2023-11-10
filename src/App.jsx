@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
@@ -8,13 +9,15 @@ import Testimonial from './components/Testimonial';
 import About from './components/About';
 
 function App() {
+  const heroRef = useRef(null);
+
   return (
     <>
-      <Header>
+      <Header heroRef={heroRef}>
         <Nav />
       </Header>
       <Main>
-        <Hero />
+        <Hero ref={heroRef} />
         <Highlight />
         <Testimonial />
         <About />

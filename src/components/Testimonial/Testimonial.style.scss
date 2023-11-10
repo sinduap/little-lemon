@@ -53,3 +53,23 @@
     filter: opacity(0.75);
   }
 }
+
+@media screen and (max-width: 950px) {
+  .testimonial {
+    &__name {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .testimonial {
+    &__cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__description {
+      min-height: 25px;
+    }
+  }
+}

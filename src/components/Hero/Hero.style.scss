@@ -37,3 +37,21 @@
     border-radius: 1.6rem;
   }
 }
+
+@media screen and (max-width: 850px) {
+  .hero {
+    grid-template-columns: 1fr;
+    row-gap: 4rem;
+
+    &__img {
+      display: none;
+    }
+  }
+
+  .hero-background {
+    background: linear-gradient(rgba(59, 74, 69, 0.9), rgba(59, 74, 69, 0.9)),
+      url('../../assets/images/hero.jpg');
+    background-position: 100%;
+    background-size: cover;
+  }
+}

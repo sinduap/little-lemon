@@ -9,6 +9,7 @@
   &__header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 5rem;
   }
 
@@ -16,5 +17,21 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .highlight {
+    &__menu {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .highlight {
+    &__menu {
+      grid-template-columns: 1fr;
+    }
   }
 }

@@ -1,11 +1,12 @@
+import { forwardRef } from 'react';
 import Button from '../Button';
 import './Hero.style.scss';
 import hero from '../../assets/images/hero.jpg';
 
-const Hero = () => (
-  <div className="bg-green">
+const Hero = forwardRef((_props, ref) => (
+  <div className="bg-green hero-background">
     <div className="container">
-      <section className="hero">
+      <section className="hero" ref={ref}>
         <div className="hero__box">
           <h1 className="hero__title">
             Little Lemon <span>Chicago</span>
@@ -21,12 +22,12 @@ const Hero = () => (
           </p>
           <Button>Reserve a table</Button>
         </div>
-        <div className="hero__box">
-          <img className="hero__img" src={hero} alt="Meal" />
+        <div className="hero__box hero__box--img">
+          <img className="hero__img" src={hero} alt="Bruschetta" />
         </div>
       </section>
     </div>
   </div>
-);
+));
 
 export default Hero;
