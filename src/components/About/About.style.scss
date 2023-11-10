@@ -1,5 +1,5 @@
 .about {
-  margin: 10rem 0;
+  padding: 10rem 0;
   display: grid;
   grid-template-columns: 3fr 2fr;
   column-gap: 4rem;
@@ -29,5 +29,27 @@
 
   &__img {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .about {
+    grid-template-columns: 1fr;
+
+    &__box {
+      &--img {
+        display: none;
+      }
+    }
+  }
+
+  .about-background {
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+      ),
+      url('../../assets/images/mario-and-adrian.jpg');
+    background-position: 100%;
+    background-size: cover;
   }
 }

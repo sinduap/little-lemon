@@ -43,6 +43,10 @@
       transition: all 0.3s ease-out;
     }
 
+    &:visited {
+      color: inherit;
+    }
+
     &:hover {
       color: var(--col-primary-2);
     }

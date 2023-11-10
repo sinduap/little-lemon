@@ -46,3 +46,12 @@
     gap: 1rem;
   }
 }
+
+@media screen and (max-width: 950px) {
+  .card {
+    &__description {
+      font-size: 1.4rem;
+      height: 80px;
+    }
+  }
+}
