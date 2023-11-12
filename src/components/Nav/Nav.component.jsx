@@ -1,27 +1,36 @@
-import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
 import './Nav.style.scss';
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  function handleOpen() {
-    setIsOpen(prev => !prev);
-  }
+  const handleOpen = () => setIsOpen(prev => !prev);
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (!isOpen) return;
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
     <>
       <nav className={isOpen ? 'mobile-nav' : 'nav'}>
         <ul className={isOpen ? 'mobile-nav__list' : 'nav__list'}>
           <li>
-            <a className={isOpen ? 'mobile-nav__item' : 'nav__item'} href="#">
+            <Link className={isOpen ? 'mobile-nav__item' : 'nav__item'} to="/">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a className={isOpen ? 'mobile-nav__item' : 'nav__item'} href="#">
+            <Link
+              className={isOpen ? 'mobile-nav__item' : 'nav__item'}
+              to="/about"
+            >
               About
-            </a>
+            </Link>
           </li>
           <li>
             <a className={isOpen ? 'mobile-nav__item' : 'nav__item'} href="#">
