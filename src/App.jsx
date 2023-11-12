@@ -1,30 +1,19 @@
-import { useRef } from 'react';
-import Header from './components/Header';
-import Main from './components/Main';
-import Footer from './components/Footer';
-import Nav from './components/Nav';
-import Hero from './components/Hero';
-import Highlight from './components/Highlight';
-import Testimonial from './components/Testimonial';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
+import Page from './pages/Page';
+import Home from './pages/Home';
 import About from './components/About';
 
-function App() {
-  const heroRef = useRef(null);
-
-  return (
-    <>
-      <Header heroRef={heroRef}>
-        <Nav />
-      </Header>
-      <Main>
-        <Hero ref={heroRef} />
-        <Highlight />
-        <Testimonial />
-        <About />
-      </Main>
-      <Footer />
-    </>
-  );
-}
+const App = () => (
+  <BrowserRouter>
+    <ScrollToTop />
+    <Routes>
+      <Route path="/" element={<Page />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Route>
+    </Routes>
+  </BrowserRouter>
+);
 
 export default App;
