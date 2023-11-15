@@ -19,7 +19,7 @@ const Hero = () => (
             moderate prices, making it a popular place for a meal any time of
             the day.
           </p>
-          <Button>Reserve a table</Button>
+          <Button to={'/book'}>Reserve a table</Button>
         </div>
         <div className="hero__box hero__box--img">
           <img className="hero__img" src={hero} alt="Bruschetta" />

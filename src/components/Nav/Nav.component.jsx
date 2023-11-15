@@ -38,9 +38,12 @@ const Nav = () => {
             </a>
           </li>
           <li>
-            <a className={isOpen ? 'mobile-nav__item' : 'nav__item'} href="#">
+            <Link
+              className={isOpen ? 'mobile-nav__item' : 'nav__item'}
+              to="/reservations"
+            >
               Reservations
-            </a>
+            </Link>
           </li>
           <li>
             <a className={isOpen ? 'mobile-nav__item' : 'nav__item'} href="#">
