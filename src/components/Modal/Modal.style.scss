@@ -1,0 +1,19 @@
+.modal {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--col-white-2);
+  border-radius: 1.6rem;
+
+  &__text {
+    padding: 2rem 1rem;
+    font-size: 1.6rem;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+  }
+}

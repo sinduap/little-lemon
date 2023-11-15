@@ -1,8 +1,22 @@
 .btn {
-  &:link {
-    display: inline-block;
-    padding: 1rem 2rem;
+  &--default {
     background-color: var(--col-primary-2);
+  }
+
+  &--success {
+    background-color: var(--col-success);
+  }
+
+  &--error {
+    background-color: var(--col-error);
+  }
+
+  &:link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
     font-family: inherit;
     border: 0;
     border-radius: 1.6rem;
