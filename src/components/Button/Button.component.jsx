@@ -4,10 +4,16 @@ import './Button.style.scss';
 const Button = ({
   children,
   type = 'default',
+  outline = false,
   className = '',
   ...otherProps
 }) => (
-  <Link href="#" className={`btn btn--${type} ${className}`} {...otherProps}>
+  <Link
+    role="button"
+    href="#"
+    className={`btn btn--${type} ${outline ? 'btn--outline' : ''} ${className}`}
+    {...otherProps}
+  >
     {children}
   </Link>
 );
