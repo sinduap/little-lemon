@@ -2,13 +2,13 @@
   --col-body: #333;
   --col-primary-1: #3a4b46;
   --col-primary-2: #f4ce14;
-  --col-success: hsl(105, 95%, 70%);
-  --col-error: hsl(0, 95%, 70%);
+  --col-success: hsl(162, 70%, 70%);
+  --col-error: hsl(0, 70%, 70%);
   --col-accent: #ee9972;
   --col-black: #1f1f1f;
   --col-white: #e0e0e0;
-  --col-white-2: #efefef;
-  --col-white-3: #f3f3f3;
+  --col-white-2: #e3e8e7;
+  --col-white-3: #f2f3f3;
   --shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -37,6 +37,10 @@ ul {
 
 input {
   font-family: inherit;
+}
+
+textarea {
+  width: 100%;
 }
 
 .mt-2 {

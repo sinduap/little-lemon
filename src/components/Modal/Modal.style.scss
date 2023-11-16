@@ -3,17 +3,16 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  background-color: var(--col-white-2);
+  background-color: var(--col-white);
   border-radius: 1.6rem;
 
-  &__text {
-    padding: 2rem 1rem;
-    font-size: 1.6rem;
+  &__body {
+    margin-bottom: 1rem;
   }
 
   &__buttons {
     display: flex;
     gap: 2rem;
-    justify-content: center;
+    justify-content: start;
   }
 }
