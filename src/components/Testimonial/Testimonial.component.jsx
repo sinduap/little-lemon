@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import useFetch from '../../hook/useFetch';
 import { FaStar } from 'react-icons/fa';
 import './Testimonial.style.scss';
 
@@ -23,13 +23,10 @@ const TestimonialCard = ({ name, username, imgUrl, description, rating }) => (
 );
 
 const Testimonial = () => {
-  const [testimonials, setTestimonials] = useState([]);
-
-  useEffect(() => {
-    fetch('http://localhost:8000/testimonials')
-      .then(res => res.json())
-      .then(data => setTestimonials(data));
-  }, []);
+  const { data: testimonials } = useFetch(
+    'http://localhost:8000/testimonials',
+    []
+  );
 
   return (
     <div className="bg-green">
