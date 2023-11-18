@@ -8,7 +8,23 @@ const BookForm = forwardRef((props, ref) => {
   const { book, handleOpenModal, handleDecreaseGuest, handleIncreaseGuest } =
     props;
 
-  const availableTime = useFetch('http://localhost:8000/available_time');
+  const { data: availableTime } = useFetch(
+    'http://localhost:8000/available_time'
+  );
+
+  const handleChangeGuest = e => {
+    const guest = e.target.value;
+    if (guest < 0 || guest > 10) return;
+    book.setFieldValue('guest', guest);
+  };
+
+  const handleSubmitForm = () => {
+    if (Object.keys(book.errors).length) {
+      book.handleSubmit();
+      return;
+    }
+    handleOpenModal(true);
+  };
 
   return (
     <section className="book">
@@ -120,11 +136,7 @@ const BookForm = forwardRef((props, ref) => {
               className="book__input"
               type="number"
               onBlur={book.handleBlur}
-              onChange={e => {
-                const guest = e.target.value;
-                if (guest < 0 || guest > 10) return;
-                book.setFieldValue('guest', guest);
-              }}
+              onChange={handleChangeGuest}
               value={book.values.guest}
               name="people"
               id="people"
@@ -183,16 +195,7 @@ const BookForm = forwardRef((props, ref) => {
             value={book.values.message}
           ></textarea>
         </div>
-        <Button
-          className="mt-2"
-          onClick={() => {
-            if (Object.keys(book.errors).length) {
-              book.handleSubmit();
-              return;
-            }
-            handleOpenModal(true);
-          }}
-        >
+        <Button className="mt-2" onClick={handleSubmitForm}>
           Submit <FaArrowRight size="12px" />
         </Button>
       </form>

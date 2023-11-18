@@ -1,16 +1,10 @@
-import { useState, useEffect } from 'react';
+import useFetch from '../../hook/useFetch';
 import Card from '../Card';
 import Button from '../Button';
 import './Highlight.style.scss';
 
 const Highlight = () => {
-  const [menu, setMenu] = useState([]);
-
-  useEffect(() => {
-    fetch(' http://localhost:8000/menu')
-      .then(res => res.json())
-      .then(data => setMenu(data));
-  }, []);
+  const { data: menu } = useFetch(' http://localhost:8000/menu', []);
 
   return (
     <section className="highlight">
