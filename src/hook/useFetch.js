@@ -1,18 +1,32 @@
-import { useState, useEffect } from 'react';
+import { useReducer, useEffect } from 'react';
+
+const fetchReducer = (state, action) => {
+  switch (action.type) {
+    case 'loading':
+      return { ...state, status: 'loading' };
+    case 'resolved':
+      return { ...state, data: action.data, status: 'resolved' };
+    case 'rejected':
+      return { ...state, data: null, status: 'rejected' };
+    default:
+      throw new Error(`Unknown action type: ${action.type}`);
+  }
+};
 
 const useFetch = (url, initialState = null) => {
-  const [state, setState] = useState({
+  const [state, dispatch] = useReducer(fetchReducer, {
     status: 'idle',
-    data: initialState,
+    data: null,
     error: null,
+    ...initialState,
   });
 
   useEffect(() => {
-    setState({ ...state, status: 'loading', error: null, data: initialState });
+    dispatch({ type: 'loading' });
     fetch(url)
       .then(res => res.json())
-      .then(data => setState({ ...state, status: 'resolved', data }))
-      .catch(error => setState({ ...state, status: 'rejected', error }));
+      .then(data => dispatch({ type: 'resolved', data }))
+      .catch(error => dispatch({ type: 'rejected', error }));
   }, [url]);
 
   return state;

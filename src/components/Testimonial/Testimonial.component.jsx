@@ -23,9 +23,8 @@ const TestimonialCard = ({ name, username, imgUrl, description, rating }) => (
 );
 
 const Testimonial = () => {
-  const { data: testimonials } = useFetch(
-    'http://localhost:8000/testimonials',
-    []
+  const { status, data: testimonials } = useFetch(
+    'http://localhost:8000/testimonials'
   );
 
   return (
@@ -34,16 +33,18 @@ const Testimonial = () => {
         <section className="testimonial">
           <h2 className="testimonial__heading">Testimonials</h2>
           <section className="testimonial__cards">
-            {testimonials.map(testimonial => (
-              <TestimonialCard
-                key={testimonial.id}
-                name={testimonial.name}
-                username={testimonial.username}
-                imgUrl={testimonial.img_url}
-                description={testimonial.description}
-                rating={testimonial.rating}
-              />
-            ))}
+            {status === 'loading' && <div>Loading...</div>}
+            {status === 'resolved' &&
+              testimonials.map(testimonial => (
+                <TestimonialCard
+                  key={testimonial.id}
+                  name={testimonial.name}
+                  username={testimonial.username}
+                  imgUrl={testimonial.img_url}
+                  description={testimonial.description}
+                  rating={testimonial.rating}
+                />
+              ))}
           </section>
         </section>
       </div>

@@ -4,7 +4,7 @@ import Button from '../Button';
 import './Highlight.style.scss';
 
 const Highlight = () => {
-  const { data: menu } = useFetch(' http://localhost:8000/menu', []);
+  const { status, data: menu } = useFetch('http://localhost:8000/menu');
 
   return (
     <section className="highlight">
@@ -14,15 +14,17 @@ const Highlight = () => {
           <Button>Discover all menu</Button>
         </header>
         <div className="highlight__menu">
-          {menu.map(dish => (
-            <Card
-              key={dish.id}
-              name={dish.name}
-              description={dish.description}
-              imgUrl={dish.img_url}
-              price={dish.price}
-            />
-          ))}
+          {status === 'loading' && <div>Loading...</div>}
+          {status === 'resolved' &&
+            menu.map(dish => (
+              <Card
+                key={dish.id}
+                name={dish.name}
+                description={dish.description}
+                imgUrl={dish.img_url}
+                price={dish.price}
+              />
+            ))}
         </div>
       </div>
     </section>
