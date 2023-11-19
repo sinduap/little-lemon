@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
 import './Nav.style.scss';
@@ -8,19 +8,23 @@ const Nav = () => {
 
   const handleOpen = () => setIsOpen(prev => !prev);
 
-  const { pathname } = useLocation();
-
   useEffect(() => {
     if (!isOpen) return;
     setIsOpen(false);
-  }, [pathname]);
+  }, [isOpen]);
+
+  const handleScrollToTop = () => window.scrollTo(0, 0);
 
   return (
     <>
       <nav className={isOpen ? 'mobile-nav' : 'nav'}>
         <ul className={isOpen ? 'mobile-nav__list' : 'nav__list'}>
           <li>
-            <Link className={isOpen ? 'mobile-nav__item' : 'nav__item'} to="/">
+            <Link
+              className={isOpen ? 'mobile-nav__item' : 'nav__item'}
+              to="/"
+              onClick={handleScrollToTop}
+            >
               Home
             </Link>
           </li>
@@ -28,12 +32,17 @@ const Nav = () => {
             <Link
               className={isOpen ? 'mobile-nav__item' : 'nav__item'}
               to="/about"
+              onClick={handleScrollToTop}
             >
               About
             </Link>
           </li>
           <li>
-            <a className={isOpen ? 'mobile-nav__item' : 'nav__item'} href="#">
+            <a
+              className={isOpen ? 'mobile-nav__item' : 'nav__item'}
+              href="/#"
+              onClick={handleScrollToTop}
+            >
               Menu
             </a>
           </li>
@@ -46,12 +55,20 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <a className={isOpen ? 'mobile-nav__item' : 'nav__item'} href="#">
+            <a
+              className={isOpen ? 'mobile-nav__item' : 'nav__item'}
+              href="/#"
+              onClick={handleScrollToTop}
+            >
               Order Online
             </a>
           </li>
           <li>
-            <a className={isOpen ? 'mobile-nav__item' : 'nav__item'} href="#">
+            <a
+              className={isOpen ? 'mobile-nav__item' : 'nav__item'}
+              href="/#"
+              onClick={handleScrollToTop}
+            >
               Login
             </a>
           </li>
