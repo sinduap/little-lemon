@@ -56,5 +56,80 @@
       "rating": 5
     }
   ],
-  "available_time": ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]
+  "available_time": [
+    "17:00",
+    "18:00",
+    "19:00",
+    "20:00",
+    "21:00",
+    "22:00"
+  ],
+  "bookings": [
+    {
+      "firstName": "Sindu",
+      "lastName": "sindu.andita@gmail.com",
+      "email": "sindu.andita@gmail.com",
+      "date": "2023-11-21",
+      "time": "18:00",
+      "guest": 1,
+      "occasion": "dinner",
+      "message": "",
+      "id": 1
+    },
+    {
+      "firstName": "Sindu",
+      "lastName": "Andita",
+      "email": "sindu.andita@gmail.com",
+      "date": "2023-11-21",
+      "time": "19:00",
+      "guest": 1,
+      "occasion": "dinner",
+      "message": "",
+      "id": 2
+    },
+    {
+      "firstName": "Sindu",
+      "lastName": "Andita",
+      "email": "sindu.andita@gmail.com",
+      "date": "2023-11-21",
+      "time": "18:00",
+      "guest": 2,
+      "occasion": "dinner",
+      "message": "",
+      "id": 3
+    },
+    {
+      "firstName": "Sindu",
+      "lastName": "Andita",
+      "email": "sindu.andita@gmail.com",
+      "date": "2023-11-21",
+      "time": "20:00",
+      "guest": 2,
+      "occasion": "dinner",
+      "message": "",
+      "id": 4
+    },
+    {
+      "firstName": "Sindu",
+      "lastName": "Andita",
+      "email": "sindu.andita@gmail.com",
+      "date": "2023-11-21",
+      "time": "20:00",
+      "guest": 1,
+      "occasion": "dinner",
+      "message": "",
+      "id": 5
+    },
+    {
+      "firstName": "Futi",
+      "lastName": "Kasiha",
+      "email": "futi.kasiha@gmail.com",
+      "date": "2023-11-23",
+      "time": "20:00",
+      "guest": 2,
+      "occasion": "Birthday",
+      "message": "",
+      "id": 6
+    }
+  ]
 }
