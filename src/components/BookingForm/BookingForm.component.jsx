@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import useFetch from '../../hook/useFetch';
 import { FaPlus, FaMinus, FaArrowRight } from 'react-icons/fa';
 import Button from '../Button';
-import './BookForm.style.scss';
+import './BookingForm.style.scss';
 
 const BookForm = forwardRef((props, ref) => {
   const { book, handleOpenModal, handleDecreaseGuest, handleIncreaseGuest } =
@@ -174,9 +174,9 @@ const BookForm = forwardRef((props, ref) => {
             onBlur={book.handleBlur}
             onChange={book.handleChange}
           >
-            <option value="dinner">Dinner</option>
-            <option value="birthday">Birthday</option>
-            <option value="anniversary">Anniversary</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Birthday">Birthday</option>
+            <option value="Anniversary">Anniversary</option>
           </select>
         </div>
         <div className="book__section">

@@ -4,8 +4,9 @@ import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import Overlay from '../../components/Overlay';
 import Modal from '../../components/Modal';
-import BookForm from '../../components/BookForm';
-import './Book.style.scss';
+import BookingForm from '../../components/BookingForm';
+import { useSucceedBooking } from '../../context/SucceedBookingContext';
+import './Booking.style.scss';
 
 const BookSchema = Yup.object().shape({
   firstName: Yup.string().min(3, 'Too short').required('Required'),
@@ -21,6 +22,7 @@ const Book = () => {
   const [openModal, setOpenModal] = useState(false);
   const navigate = useNavigate();
   const firstNameRef = useRef(null);
+  const [_, setSucceedBooking] = useSucceedBooking();
 
   useEffect(() => {
     firstNameRef.current.focus();
@@ -38,8 +40,19 @@ const Book = () => {
       message: '',
     },
     onSubmit(values) {
-      alert(JSON.stringify(values, null, 2));
-      navigate('/');
+      fetch('http://localhost:8000/bookings', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      })
+        .then(res => res.json())
+        .then(data => {
+          setSucceedBooking(data);
+          navigate('/booking-success');
+        })
+        .catch(err => {});
     },
     validationSchema: BookSchema,
   });
@@ -75,7 +88,7 @@ const Book = () => {
           />
         </Overlay>
       )}
-      <BookForm
+      <BookingForm
         ref={firstNameRef}
         book={book}
         handleOpenModal={setOpenModal}
