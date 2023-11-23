@@ -4,23 +4,24 @@ import Home from './pages/Home';
 import About from './components/About';
 import Booking from './pages/Booking';
 import BookingSuccess from './pages/BookingSuccess';
-import ScrollToTop from './components/ScrollToTop';
-import { SucceedBookingProvider } from './context/SucceedBookingContext';
+import { ScrollToTop } from './context/ScrollToTop';
+import { SucceedBooking } from './context/SucceedBooking';
 
 const App = () => (
-  <SucceedBookingProvider>
+  <SucceedBooking>
     <BrowserRouter>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/booking" element={<Booking />} />
-          <Route path="/booking-success" element={<BookingSuccess />} />
-        </Route>
-      </Routes>
+      <ScrollToTop>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/booking" element={<Booking />} />
+            <Route path="/booking-success" element={<BookingSuccess />} />
+          </Route>
+        </Routes>
+      </ScrollToTop>
     </BrowserRouter>
-  </SucceedBookingProvider>
+  </SucceedBooking>
 );
 
 export default App;

@@ -1,4 +1,4 @@
-import { useSucceedBooking } from '../../context/SucceedBookingContext';
+import { useSucceedBooking } from '../../context/SucceedBooking';
 import { FaRegCheckCircle } from 'react-icons/fa';
 import Button from '../../components/Button';
 import './BookingSuccess.style.scss';

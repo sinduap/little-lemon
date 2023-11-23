@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef, useEffect } from 'react';
 import useFetch from '../../hook/useFetch';
 import { FaPlus, FaMinus, FaArrowRight } from 'react-icons/fa';
 import Button from '../Button';
@@ -25,6 +25,17 @@ const BookForm = forwardRef((props, ref) => {
     }
     handleOpenModal(true);
   };
+
+  useEffect(() => {
+    const errorKeys = Object.keys(book.errors);
+
+    if (errorKeys.length > 0) {
+      const firstElement = document.querySelector(`#${errorKeys[0]}`);
+      if (firstElement !== document.activeElement) {
+        firstElement.focus();
+      }
+    }
+  }, [book.errors]);
 
   return (
     <section className="book">
