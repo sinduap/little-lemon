@@ -1,4 +1,4 @@
-import { forwardRef, useEffect } from 'react';
+import { forwardRef, useLayoutEffect } from 'react';
 import useFetch from '../../hook/useFetch';
 import { FaPlus, FaMinus, FaArrowRight } from 'react-icons/fa';
 import Button from '../Button';
@@ -26,13 +26,14 @@ const BookForm = forwardRef((props, ref) => {
     handleOpenModal(true);
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const errorKeys = Object.keys(book.errors);
 
     if (errorKeys.length > 0) {
-      const firstElement = document.querySelector(`#${errorKeys[0]}`);
+      const firstElement = document.querySelector(`${errorKeys[0]}`);
+      console.log('firstElement', firstElement);
       if (firstElement !== document.activeElement) {
-        firstElement.focus();
+        firstElement?.focus();
       }
     }
   }, [book.errors]);
@@ -96,7 +97,7 @@ const BookForm = forwardRef((props, ref) => {
         <div className="book__section">
           <label className="book__label" htmlFor="date">
             Select Date and Time
-            {book.touched.time && book.errors.time ? (
+            {book.errors.time ? (
               <span className="book__error">{book.errors.time}</span>
             ) : null}
           </label>
@@ -206,7 +207,11 @@ const BookForm = forwardRef((props, ref) => {
             value={book.values.message}
           ></textarea>
         </div>
-        <Button className="mt-2" onClick={handleSubmitForm}>
+        <Button
+          className="mt-2"
+          onClick={handleSubmitForm}
+          disabled={Object.keys(book.errors).length > 0}
+        >
           Submit <FaArrowRight size="12px" />
         </Button>
       </form>

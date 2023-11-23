@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
 import './Nav.style.scss';
 import { useScrollToTop } from '../../context/ScrollToTop';
@@ -7,12 +7,8 @@ import { useScrollToTop } from '../../context/ScrollToTop';
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleOpen = () => setIsOpen(prev => !prev);
-
-  useEffect(() => {
-    if (!isOpen) return;
-    setIsOpen(false);
-  }, [isOpen]);
+  const handleOpen = () => setIsOpen(true);
+  const handleClose = () => setIsOpen(false);
 
   const { scrollToTop } = useScrollToTop();
 
@@ -76,7 +72,7 @@ const Nav = () => {
         </ul>
       </nav>
       {isOpen ? (
-        <button className="nav__close" onClick={handleOpen}>
+        <button className="nav__close" onClick={handleClose}>
           <RxCross1 />
         </button>
       ) : (
