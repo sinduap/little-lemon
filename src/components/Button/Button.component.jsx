@@ -6,6 +6,7 @@ const Button = ({
   type = 'default',
   outline = false,
   className = '',
+  disabled,
   ...otherProps
 }) => (
   <Link
@@ -13,6 +14,11 @@ const Button = ({
     href="#"
     className={`btn btn--${type} ${outline ? 'btn--outline' : ''} ${className}`}
     {...otherProps}
+    style={
+      disabled
+        ? { pointerEvents: 'none', backgroundColor: 'var(--col-white)' }
+        : {}
+    }
   >
     {children}
   </Link>
