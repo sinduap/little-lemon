@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
 import './Nav.style.scss';
+import { useScrollToTop } from '../../context/ScrollToTop';
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,7 @@ const Nav = () => {
     setIsOpen(false);
   }, [isOpen]);
 
-  const handleScrollToTop = () => window.scrollTo(0, 0);
+  const { scrollToTop } = useScrollToTop();
 
   return (
     <>
@@ -23,7 +24,7 @@ const Nav = () => {
             <Link
               className={isOpen ? 'mobile-nav__item' : 'nav__item'}
               to="/"
-              onClick={handleScrollToTop}
+              onClick={scrollToTop}
             >
               Home
             </Link>
@@ -32,7 +33,7 @@ const Nav = () => {
             <Link
               className={isOpen ? 'mobile-nav__item' : 'nav__item'}
               to="/about"
-              onClick={handleScrollToTop}
+              onClick={scrollToTop}
             >
               About
             </Link>
@@ -41,7 +42,7 @@ const Nav = () => {
             <a
               className={isOpen ? 'mobile-nav__item' : 'nav__item'}
               href="/#"
-              onClick={handleScrollToTop}
+              onClick={scrollToTop}
             >
               Menu
             </a>
@@ -58,7 +59,7 @@ const Nav = () => {
             <a
               className={isOpen ? 'mobile-nav__item' : 'nav__item'}
               href="/#"
-              onClick={handleScrollToTop}
+              onClick={scrollToTop}
             >
               Order Online
             </a>
@@ -67,7 +68,7 @@ const Nav = () => {
             <a
               className={isOpen ? 'mobile-nav__item' : 'nav__item'}
               href="/#"
-              onClick={handleScrollToTop}
+              onClick={scrollToTop}
             >
               Login
             </a>

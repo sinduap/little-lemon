@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Overlay from '../../components/Overlay';
 import Modal from '../../components/Modal';
 import BookingForm from '../../components/BookingForm';
-import { useSucceedBooking } from '../../context/SucceedBookingContext';
+import { useSucceedBooking } from '../../context/SucceedBooking';
 import './Booking.style.scss';
 
 const BookSchema = Yup.object().shape({

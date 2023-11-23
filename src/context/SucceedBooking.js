@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from 'react';
 
 const SucceedBookingContext = createContext();
 
-const SucceedBookingProvider = props => {
+const SucceedBooking = props => {
   const [succeedBooking, setSucceedBooking] = useState(null);
 
   return (
@@ -18,4 +18,4 @@ const useSucceedBooking = () => {
   return context;
 };
 
-export { useSucceedBooking, SucceedBookingProvider };
+export { useSucceedBooking, SucceedBooking };
