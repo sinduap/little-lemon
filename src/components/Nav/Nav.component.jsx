@@ -12,6 +12,11 @@ const Nav = () => {
 
   const { scrollToTop } = useScrollToTop();
 
+  function handleClickMenu() {
+    scrollToTop();
+    isOpen && setIsOpen(false);
+  }
+
   return (
     <>
       <nav className={isOpen ? 'mobile-nav' : 'nav'}>
@@ -20,7 +25,7 @@ const Nav = () => {
             <Link
               className={isOpen ? 'mobile-nav__item' : 'nav__item'}
               to="/"
-              onClick={scrollToTop}
+              onClick={handleClickMenu}
             >
               Home
             </Link>
@@ -29,7 +34,7 @@ const Nav = () => {
             <Link
               className={isOpen ? 'mobile-nav__item' : 'nav__item'}
               to="/about"
-              onClick={scrollToTop}
+              onClick={handleClickMenu}
             >
               About
             </Link>
@@ -38,7 +43,7 @@ const Nav = () => {
             <a
               className={isOpen ? 'mobile-nav__item' : 'nav__item'}
               href="/#"
-              onClick={scrollToTop}
+              onClick={handleClickMenu}
             >
               Menu
             </a>
@@ -47,6 +52,7 @@ const Nav = () => {
             <Link
               className={isOpen ? 'mobile-nav__item' : 'nav__item'}
               to="/reservations"
+              onClick={handleClickMenu}
             >
               Reservations
             </Link>
@@ -55,7 +61,7 @@ const Nav = () => {
             <a
               className={isOpen ? 'mobile-nav__item' : 'nav__item'}
               href="/#"
-              onClick={scrollToTop}
+              onClick={handleClickMenu}
             >
               Order Online
             </a>
@@ -64,7 +70,7 @@ const Nav = () => {
             <a
               className={isOpen ? 'mobile-nav__item' : 'nav__item'}
               href="/#"
-              onClick={scrollToTop}
+              onClick={handleClickMenu}
             >
               Login
             </a>

@@ -30,8 +30,7 @@ const BookForm = forwardRef((props, ref) => {
     const errorKeys = Object.keys(book.errors);
 
     if (errorKeys.length > 0) {
-      const firstElement = document.querySelector(`${errorKeys[0]}`);
-      console.log('firstElement', firstElement);
+      const firstElement = document.querySelector(`#${errorKeys[0]}`);
       if (firstElement !== document.activeElement) {
         firstElement?.focus();
       }
@@ -120,13 +119,15 @@ const BookForm = forwardRef((props, ref) => {
                       book.values.time === time
                         ? 'book__label-time--active'
                         : ''
-                    }`}
+                    } ${book.errors.time ? 'book__label-time--error' : ''}`}
                     key={time}
+                    htmlFor={time}
                   >
                     {`${time}pm`}
                     <input
                       className="book__input-time"
                       name="time"
+                      id={time}
                       type="radio"
                       value={time}
                       onBlur={book.handleBlur}

@@ -97,6 +97,10 @@
       &--active {
         background-color: var(--col-primary-2);
       }
+
+      &--error {
+        border: 1px solid var(--col-error);
+      }
     }
   }
 
