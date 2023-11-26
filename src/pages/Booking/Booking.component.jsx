@@ -22,7 +22,7 @@ const Book = () => {
   const [openModal, setOpenModal] = useState(false);
   const navigate = useNavigate();
   const firstNameRef = useRef(null);
-  const [_, setSucceedBooking] = useSucceedBooking();
+  const [, setSucceedBooking] = useSucceedBooking();
 
   useEffect(() => {
     firstNameRef.current.focus();

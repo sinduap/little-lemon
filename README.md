@@ -8,7 +8,12 @@ This is the project for project submission of Meta Front-end developer Capstone 
 
 ## Screenshots
 
-Include logo/demo screenshot etc.
+### Homepage
+
+<img src="https://imgur.com/07pLnl2.png" width="40%">
+<img src="https://i.imgur.com/gEN8CpB.png" width="40%">
+<img src="https://imgur.com/cRxbn7A.png" width="40%">
+<img src="https://imgur.com/fQGSmHe.png" width="40%">
 
 ## Tech/framework used
 
@@ -40,5 +45,18 @@ npm test
 git clone git@github.com:sinduap/little-lemon.git [project-name]
 cd [project-name]
 npm install
-npm start
 ```
+
+1.  ### Run app
+
+    ```
+    npm start
+    ```
+
+2.  ### Run server
+
+    _Open another terminal_
+
+    ```
+    npm run server
+    ```
